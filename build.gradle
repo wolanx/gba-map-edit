@@ -1,0 +1,32 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        maven { url "http://maven.aliyun.com/nexus/content/groups/public" }
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'se.transmode.gradle:gradle-docker:1.2'
+    }
+}
+
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.1.4.RELEASE' // 重点
+}
+
+allprojects {
+    apply plugin: 'java'
+    apply plugin: 'docker'
+    apply plugin: 'io.spring.dependency-management'
+    apply plugin: 'org.springframework.boot'
+
+    group = 'com.zx5435.gba'
+    version = '1.0'
+    sourceCompatibility = '1.8'
+
+    repositories {
+        mavenLocal()
+        maven { url "http://maven.aliyun.com/nexus/content/groups/public" }
+        mavenCentral()
+    }
+}
