@@ -28,7 +28,7 @@ public class Main {
         try {
             PluginManager.loadAllPlugins();
         } catch (Exception e) {
-            // TODO Auto-generated catch block
+            // ddAuto-generated catch block
             e.printStackTrace();
         }
     }

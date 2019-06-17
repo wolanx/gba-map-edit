@@ -392,7 +392,7 @@ public class BlockEditor extends JFrame {
 
                 File inputfile = new File(location);
                 try {
-                    //TODO: Make sure we're getting valid images here, or things go ka-boom.
+                    //dd: Make sure we're getting valid images here, or things go ka-boom.
                     BufferedImage tileset = ImageIO.read(inputfile);
                     IndexColorModel icm = (IndexColorModel) tileset.getColorModel();
 
@@ -426,7 +426,7 @@ public class BlockEditor extends JFrame {
                     ROMManager.currentROM.floodBytes((int) MapIO.blockRenderer.getGlobalTileset().tilesetHeader.pGFX,
                             DataStore.FreespaceByte, Lz77.getUncompressedSize(ROMManager.currentROM,
                                     (int) MapIO.blockRenderer.getGlobalTileset().tilesetHeader.pGFX));
-                    //TODO: Make removing old data optional
+                    //dd: Make removing old data optional
 
                     MapIO.blockRenderer.getGlobalTileset().tilesetHeader.pGFX = freespace;
                     MapIO.blockRenderer.getGlobalTileset().tilesetHeader.bCompressed = 1;
@@ -454,7 +454,7 @@ public class BlockEditor extends JFrame {
 
                 File inputfile = new File(location);
                 try {
-                    //TODO: Make sure we're getting valid images here, or things go ka-boom.
+                    //dd: Make sure we're getting valid images here, or things go ka-boom.
                     BufferedImage tileset = ImageIO.read(inputfile);
                     IndexColorModel icm = (IndexColorModel) tileset.getColorModel();
 
@@ -488,7 +488,7 @@ public class BlockEditor extends JFrame {
                     ROMManager.currentROM.floodBytes((int) MapIO.blockRenderer.getLocalTileset().tilesetHeader.pGFX,
                             DataStore.FreespaceByte, Lz77.getUncompressedSize(ROMManager.currentROM,
                                     (int) MapIO.blockRenderer.getLocalTileset().tilesetHeader.pGFX));
-                    //TODO: Make removing old data optional
+                    //dd: Make removing old data optional
 
                     MapIO.blockRenderer.getLocalTileset().tilesetHeader.pGFX = freespace;
                     MapIO.blockRenderer.getLocalTileset().tilesetHeader.bCompressed = 1;

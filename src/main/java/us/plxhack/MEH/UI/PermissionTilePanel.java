@@ -90,7 +90,7 @@ public class PermissionTilePanel extends JPanel {
                     srcY = y;
                     baseSelectedTile = x + (y * editorWidth);
                     MapEditorPanel.selectBuffer = new MapTile[1][1];
-                    MapEditorPanel.selectBuffer[0][0] = new MapTile(MainGUI.tileEditorPanel.baseSelectedTile, PermissionTilePanel.baseSelectedTile); //TODO implement movement perms
+                    MapEditorPanel.selectBuffer[0][0] = new MapTile(MainGUI.tileEditorPanel.baseSelectedTile, PermissionTilePanel.baseSelectedTile); //ddimplement movement perms
                     MapEditorPanel.bufferWidth = 1;
                     MapEditorPanel.bufferHeight = 1;
                     MapEditorPanel.selectBox.width = 16;
@@ -133,7 +133,7 @@ public class PermissionTilePanel extends JPanel {
                     MapEditorPanel.bufferHeight = MapEditorPanel.selectBox.height / 16;
                     for (int x = 0; x < MapEditorPanel.bufferWidth; x++)
                         for (int y = 0; y < MapEditorPanel.bufferHeight; y++)
-                            MapEditorPanel.selectBuffer[x][y] = new MapTile(baseSelectedTile = x + (y * editorWidth), 0xC); //TODO implement movement perms
+                            MapEditorPanel.selectBuffer[x][y] = new MapTile(baseSelectedTile = x + (y * editorWidth), 0xC); //ddimplement movement perms
                 }
             }
 
@@ -181,7 +181,7 @@ public class PermissionTilePanel extends JPanel {
                 break;
             case A_MAP:
                 editorWidth = 1;
-                imagePath = "/img/permissionsamap.png"; //TODO Get Bela to do this one!
+                imagePath = "/img/permissionsamap.png"; //ddGet Bela to do this one!
             default:
                 editorWidth = 4;
         }

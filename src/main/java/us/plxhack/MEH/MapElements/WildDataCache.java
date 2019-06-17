@@ -35,8 +35,8 @@ public class WildDataCache extends Thread implements Runnable {
         long pData = DataStore.WildPokemon;
         if (initialNum < dataCache.size()) {
             pData = rom.findFreespace(DataStore.FreespaceStart, WildDataHeader.getSize() * dataCache.size());
-            rom.repoint((int) DataStore.WildPokemon, (int) pData, 14); //TODO: Maybe make this configurable?
-            rom.floodBytes((int) DataStore.WildPokemon, (byte) 0xFF, initialNum * WildDataHeader.getSize()); //TODO Make configurable
+            rom.repoint((int) DataStore.WildPokemon, (int) pData, 14); //dd: Maybe make this configurable?
+            rom.floodBytes((int) DataStore.WildPokemon, (byte) 0xFF, initialNum * WildDataHeader.getSize()); //ddMake configurable
         }
 
         for (WildData d : dataCache.values()) {

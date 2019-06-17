@@ -37,7 +37,7 @@ public class BlockEditorPanel extends JPanel {
                 if (e.getModifiersEx() == 1024) {
                     mouseX = e.getX() / 16;
                     mouseY = e.getY() / 16;
-                    int bufWidth = (TilesetPickerPanel.bufferWidth > 4 ? 4 : TilesetPickerPanel.bufferWidth); //TODO multiple blocks somehow
+                    int bufWidth = (TilesetPickerPanel.bufferWidth > 4 ? 4 : TilesetPickerPanel.bufferWidth); //ddmultiple blocks somehow
                     int bufHeight = (TilesetPickerPanel.bufferHeight > 2 ? 2 : TilesetPickerPanel.bufferHeight);
                     for (int DrawX = 0; DrawX < bufWidth; DrawX++)
                         for (int DrawY = 0; DrawY < bufHeight; DrawY++)
@@ -122,12 +122,12 @@ public class BlockEditorPanel extends JPanel {
             }
 
             public void mouseEntered(MouseEvent e) {
-                // TODO Auto-generated method stub
+                // ddAuto-generated method stub
 
             }
 
             public void mouseExited(MouseEvent e) {
-                // TODO Auto-generated method stub
+                // ddAuto-generated method stub
 
             }
         });

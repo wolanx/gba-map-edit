@@ -11,6 +11,7 @@ import java.io.File;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class PluginManager {
     private static ArrayList<Plugin> plugins = new ArrayList<Plugin>();
@@ -18,9 +19,9 @@ public class PluginManager {
     public static void loadAllPlugins() throws Exception {
 
         File search = new File("plugins/");
-        for (File f : search.listFiles()) {
+        for (File f : Objects.requireNonNull(search.listFiles())) {
             URLClassLoader classLoader = URLClassLoader.newInstance(new URL[]{new URL("file:./plugins/" + f.getName())});
-            Class<?> clazz = classLoader.loadClass("org.zzl.minegaming.TestPlugin.Plugin"); //TODO: Read main class from somewhere. YAML?
+            Class<?> clazz = classLoader.loadClass("org.zzl.minegaming.TestPlugin.Plugin"); //dd: Read main class from somewhere. YAML?
             final Plugin plugin = (Plugin) clazz.newInstance();
             plugin.load();
             plugins.add(plugin);

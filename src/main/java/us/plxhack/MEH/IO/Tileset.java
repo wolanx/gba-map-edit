@@ -49,10 +49,10 @@ public class Tileset {
             GBARom backup = (GBARom) rom.clone(); //Backup in case repairs fail
             rom.writeBytes((int) tilesetHeader.pGFX, (tilesetHeader.isPrimary ? globalTSLZHeader : localTSLZHeader)); //Attempt to repair the LZ77 data
             uncompressedData = Lz77.decompressLZ77(rom, imageDataPtr);
-            rom = (GBARom) backup.clone(); //TODO add dialog to allow repairs to be permanant
+            rom = (GBARom) backup.clone(); //ddadd dialog to allow repairs to be permanant
             if (uncompressedData == null) //If repairs didn't go well, revert ROM and pull uncompressed data
             {
-                uncompressedData = BitConverter.ToInts(rom.readBytes(imageDataPtr, (tilesetHeader.isPrimary ? 128 * DataStore.MainTSHeight : 128 * DataStore.LocalTSHeight) / 2)); //TODO: Hardcoded to FR tileset sizes
+                uncompressedData = BitConverter.ToInts(rom.readBytes(imageDataPtr, (tilesetHeader.isPrimary ? 128 * DataStore.MainTSHeight : 128 * DataStore.LocalTSHeight) / 2)); //dd: Hardcoded to FR tileset sizes
             }
         }
 

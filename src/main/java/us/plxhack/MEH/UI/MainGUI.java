@@ -515,12 +515,11 @@ public class MainGUI extends JFrame {
         mnHelp.add(mnAbout);
     }
 
-    JButton btnImportMap;
-    JButton btnNewMap;
+    private JButton btnImportMap;
+    private JButton btnNewMap;
     private JMenuItem mntmNewMenuItem;
 
-    void CreateButtons() {
-        System.out.println(MainGUI.class.getResource("/img/ROMopen.png"));
+    private void CreateButtons() {
         System.out.println("Resource path:" + MainGUI.class.getResource("."));
         panelButtons = new JPanel();
         panelButtons.setPreferredSize(new Dimension(10, 50));
@@ -1657,7 +1656,6 @@ public class MainGUI extends JFrame {
         setPreferredSize(new Dimension(800, 1800));
         addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
-                // TODO: Are you *sure* you want to exit / Check for saved
                 // changes
                 PluginManager.unloadAllPlugins();
                 System.exit(0);
@@ -2063,7 +2061,7 @@ public class MainGUI extends JFrame {
         setStatus("Loading...");
 
         // chckbxmntmDrawSprites.setSelected(DataStore.mehSettingShowSprites==1);
-        // TODO Redo this in settings
+        // ddRedo this in settings
         new BankLoader((int) DataStore.MapHeaders, ROMManager.getActiveROM(), lblInfo, mapBanks).start();
         new WildDataCache(ROMManager.getActiveROM()).start();
         mnSave.setEnabled(true);

@@ -182,7 +182,7 @@ public class MapEditorPanel extends JPanel {
                 if (currentMode == EditMode.TILES) {
                     map.getMapTileData().getTile(selectBox.x / 16 + DrawX, selectBox.y / 16 + DrawY).SetID(selectBuffer[DrawX][DrawY].getID());
                     if (selectBuffer[DrawX][DrawY].getMeta() >= 0)
-                        map.getMapTileData().getTile(selectBox.x / 16 + DrawX, selectBox.y / 16 + DrawY).SetMeta(selectBuffer[DrawX][DrawY].getMeta()); //TODO Allow for tile-only selection. Hotkeys?
+                        map.getMapTileData().getTile(selectBox.x / 16 + DrawX, selectBox.y / 16 + DrawY).SetMeta(selectBuffer[DrawX][DrawY].getMeta()); //ddAllow for tile-only selection. Hotkeys?
                     drawTile(selectBox.x / 16 + DrawX, selectBox.y / 16 + DrawY);
                 } else if (currentMode == EditMode.MOVEMENT) {
                     map.getMapTileData().getTile(selectBox.x / 16 + DrawX, selectBox.y / 16 + DrawY).SetMeta(selectBuffer[DrawX][DrawY].getMeta());

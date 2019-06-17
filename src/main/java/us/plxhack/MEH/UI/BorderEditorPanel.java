@@ -46,7 +46,7 @@ public class BorderEditorPanel extends JPanel {
                                 try {
                                     map.getMapTileData().getTile(x + DrawX, y + DrawY).SetID(MapEditorPanel.selectBuffer[DrawX][DrawY].getID());
                                     if (MapEditorPanel.selectBuffer[DrawX][DrawY].getMeta() >= 0)
-                                        map.getMapTileData().getTile(x + DrawX, y + DrawY).SetMeta(MapEditorPanel.selectBuffer[DrawX][DrawY].getMeta()); //TODO Allow for tile-only selection. Hotkeys?
+                                        map.getMapTileData().getTile(x + DrawX, y + DrawY).SetMeta(MapEditorPanel.selectBuffer[DrawX][DrawY].getMeta()); //ddAllow for tile-only selection. Hotkeys?
                                 } catch (Exception ex) {
                                 }
                             } else if (MapEditorPanel.getMode() == EditMode.MOVEMENT) {
@@ -105,7 +105,7 @@ public class BorderEditorPanel extends JPanel {
                                 try {
                                     map.getMapTileData().getTile(x + DrawX, y + DrawY).SetID(MapEditorPanel.selectBuffer[DrawX][DrawY].getID());
                                     if (MapEditorPanel.selectBuffer[DrawX][DrawY].getMeta() >= 0)
-                                        map.getMapTileData().getTile(x + DrawX, y + DrawY).SetMeta(MapEditorPanel.selectBuffer[DrawX][DrawY].getMeta()); //TODO Allow for tile-only selection. Hotkeys?
+                                        map.getMapTileData().getTile(x + DrawX, y + DrawY).SetMeta(MapEditorPanel.selectBuffer[DrawX][DrawY].getMeta()); //ddAllow for tile-only selection. Hotkeys?
                                 } catch (Exception ex) {
                                 }
                             } else if (MapEditorPanel.getMode() == EditMode.MOVEMENT) {
@@ -148,17 +148,17 @@ public class BorderEditorPanel extends JPanel {
             }
 
             public void mousePressed(MouseEvent e) {
-                // TODO Auto-generated method stub
+                // ddAuto-generated method stub
 
             }
 
             public void mouseEntered(MouseEvent e) {
-                // TODO Auto-generated method stub
+                // ddAuto-generated method stub
 
             }
 
             public void mouseExited(MouseEvent e) {
-                // TODO Auto-generated method stub
+                // ddAuto-generated method stub
 
             }
         });

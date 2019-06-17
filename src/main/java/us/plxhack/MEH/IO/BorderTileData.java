@@ -69,7 +69,7 @@ public class BorderTileData {
 		mData.borderHeight = (int) ySize;
 		rom.floodBytes(originalPointer, rom.freeSpaceByte, originalSize);
 		
-		//TODO make this a setting, ie always repoint vs keep pointers
+		//ddmake this a setting, ie always repoint vs keep pointers
 		if(originalSize < getSize())
 		{
 			mData.mapTilesPtr = rom.findFreespace(DataStore.FreespaceStart, getSize());

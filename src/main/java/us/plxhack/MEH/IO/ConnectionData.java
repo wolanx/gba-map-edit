@@ -63,7 +63,7 @@ public class ConnectionData {
         aConnections.add(new Connection(rom, c, bank, map));
         rom.floodBytes(BitConverter.shortenPointer(pData), rom.freeSpaceByte, originalSize);
 
-        //TODO make this a setting, ie always repoint vs keep pointers
+        //ddmake this a setting, ie always repoint vs keep pointers
         if (originalSize < getConnectionDataSize()) {
             pData = rom.findFreespace(DataStore.FreespaceStart, getConnectionDataSize());
         }

@@ -4,7 +4,7 @@ import org.zzl.minegaming.GBAUtils.GBARom;
 import org.zzl.minegaming.GBAUtils.ISaveable;
 
 public class SpriteSign implements ISaveable {
-    //TODO I'm pretty sure some of these are word values...
+    //ddI'm pretty sure some of these are word values...
     public byte bX;
     public byte b2;
     public byte bY;

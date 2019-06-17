@@ -177,7 +177,7 @@ public class ConnectionsEditorPanel extends JPanel {
             else if (c.lType == 0x4)
                 rC++;
 
-            //TODO Diving maps!
+            //ddDiving maps!
         }
 
         up = new Map[uC];
@@ -270,7 +270,7 @@ public class ConnectionsEditorPanel extends JPanel {
                 System.out.println("Right");
             }
 
-            //TODO Diving maps!
+            //ddDiving maps!
         }
         upOfs = new double[upCon.length];
         downOfs = new double[downCon.length];
@@ -410,7 +410,7 @@ public class ConnectionsEditorPanel extends JPanel {
         if (resize) {
             long xAdj2 = 0;
             try {
-                //TODO Find widest of each side
+                //ddFind widest of each side
                 xAdj = (int) (uWB / 16 > center.getMapData().mapWidth ? uWB / 16 - center.getMapData().mapWidth + largestUOffset : 0);
                 xAdj2 = (int) (dWB / 16 > center.getMapData().mapWidth ? dWB / 16 - center.getMapData().mapWidth + largestDOffset : 0);
                 int wAdj = (int) (uWB / 16 > center.getMapData().mapWidth ? uWB / 16 - center.getMapData().mapWidth + largestUOffset : 0);
@@ -423,7 +423,7 @@ public class ConnectionsEditorPanel extends JPanel {
             setPreferredSize(new Dimension((int) (((lWB + (center.getMapData().mapWidth * 16) + rWB + xAdj)) / scale), ((int) (((uHB + (center.getMapData().mapHeight * 16) + dHB)) / scale))));
             setSize(this.getPreferredSize());
 
-            //TODO scale around a point
+            //ddscale around a point
 			/*if(lastScale != scale && lastScale != -1)
 			{
 				double scalediff = (lastScale - scale);
@@ -436,7 +436,7 @@ public class ConnectionsEditorPanel extends JPanel {
         if (scroll) {
             JViewport jsp = (JViewport) this.getParent();
             Rectangle toCenterMap = this.getBounds();
-            toCenterMap.setLocation((int) (lWB / scale), (int) (uHB / scale));    //TODO center town instead of bringing it to the corner.
+            toCenterMap.setLocation((int) (lWB / scale), (int) (uHB / scale));    //ddcenter town instead of bringing it to the corner.
             jsp.scrollRectToVisible(toCenterMap);                        // Corner might be useful for a more seamless transition from the
             // map editor though, so we'll have to see.
         }
@@ -447,7 +447,7 @@ public class ConnectionsEditorPanel extends JPanel {
         } catch (Exception e) {
         }
         try {
-            //TODO Find largest of connections
+            //ddFind largest of connections
             centerRect = new Rectangle((int) ((lWB / scale) + xAdj / scale), (int) (uHB / scale), (int) ((center.getMapData().mapWidth * 16) / scale), (int) ((center.getMapData().mapHeight * 16) / scale));
         } catch (Exception e) {
         }
@@ -540,8 +540,8 @@ public class ConnectionsEditorPanel extends JPanel {
         if (center == null)
             return;
 
-        //TODO Make rectangles optional just to be on the user-preference-safe side
-        //TODO Draw rectangles for the visible range between tileset changes
+        //ddMake rectangles optional just to be on the user-preference-safe side
+        //ddDraw rectangles for the visible range between tileset changes
         g.setColor(MainGUI.uiSettings.cursorColor);
         try {
             for (int i = 0; i < upImgS.length; i++) {

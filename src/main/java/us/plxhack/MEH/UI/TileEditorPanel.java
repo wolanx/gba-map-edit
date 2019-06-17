@@ -14,7 +14,7 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.awt.image.BufferedImage;
 
-//TODO Make this a base class for *any* tileset, ie movement perms
+//ddMake this a base class for *any* tileset, ie movement perms
 public class TileEditorPanel extends JPanel {
     private static final long serialVersionUID = -877213633894324075L;
     public int baseSelectedTile;    // Called it base in case of multiple tile
@@ -116,7 +116,7 @@ public class TileEditorPanel extends JPanel {
                     MapEditorPanel.bufferHeight = MapEditorPanel.selectBox.height / 16;
                     for (int x = 0; x < MapEditorPanel.bufferWidth; x++)
                         for (int y = 0; y < MapEditorPanel.bufferHeight; y++)
-                            MapEditorPanel.selectBuffer[x][y] = new MapTile(baseSelectedTile = x + (y * editorWidth), 0xC); //TODO implement movement perms
+                            MapEditorPanel.selectBuffer[x][y] = new MapTile(baseSelectedTile = x + (y * editorWidth), 0xC); //ddimplement movement perms
                 }
                 applySelectedTile();
                 repaint();
@@ -227,10 +227,10 @@ public class TileEditorPanel extends JPanel {
     }
 
     public void applySelectedTile() {
-        //TODO: Events
+        //dd: Events
         if (tiedToEditor) {
             MapEditorPanel.selectBuffer = new MapTile[1][1];
-            MapEditorPanel.selectBuffer[0][0] = new MapTile(baseSelectedTile, -1); //TODO Default movement perms
+            MapEditorPanel.selectBuffer[0][0] = new MapTile(baseSelectedTile, -1); //ddDefault movement perms
             MapEditorPanel.bufferWidth = 1;
             MapEditorPanel.bufferHeight = 1;
             MapEditorPanel.selectBox.width = 16;

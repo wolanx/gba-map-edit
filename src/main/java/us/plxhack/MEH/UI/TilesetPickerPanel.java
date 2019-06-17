@@ -99,7 +99,7 @@ public class TilesetPickerPanel extends JPanel {
                     baseSelectedTile = x + (y * 128 / 8);
                     baseSelectedPal = viewingPalette;
                     selectBuffer = new Tile[1][1];
-                    selectBuffer[0][0] = new Tile(baseSelectedTile, baseSelectedPal, host.xFlip, host.yFlip); //TODO implement movement perms
+                    selectBuffer[0][0] = new Tile(baseSelectedTile, baseSelectedPal, host.xFlip, host.yFlip); //ddimplement movement perms
                     bufferWidth = 1;
                     bufferHeight = 1;
                     selectBox.width = 16;

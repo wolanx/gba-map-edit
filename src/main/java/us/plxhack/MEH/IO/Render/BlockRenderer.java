@@ -101,6 +101,9 @@ public class BlockRenderer extends Component {
                 g.fillRect(x * 8, y * 8, 8, 8);
             }
 
+            // TODO
+//            System.out.printf("tileNum = %d, palette = %d, xFlip = %b, yFlip = %b \n", tileNum, palette, xFlip, yFlip);
+
             if (tileNum < DataStore.MainTSSize) {
                 g.drawImage(global.getTile(tileNum, palette, xFlip, yFlip), x * 8, y * 8, null);
             } else {

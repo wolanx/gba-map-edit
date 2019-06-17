@@ -63,7 +63,7 @@ public class TriggerManager implements ISaveable {
     public void save() {
         rom.floodBytes(BitConverter.shortenPointer(internalOffset), rom.freeSpaceByte, originalSize);
 
-        // TODO make this a setting, ie always repoint vs keep pointers
+        // ddmake this a setting, ie always repoint vs keep pointers
         int i = getSize();
         if (originalSize < getSize()) {
             internalOffset = rom.findFreespace(DataStore.FreespaceStart, getSize());

@@ -72,12 +72,12 @@ public class BankLoader extends Thread implements Runnable {
                     long dataPtr = BitConverter.ToInt32(b);
                     mapList.add(dataPtr);
                     int mapName = BitConverter.GrabBytesAsInts(rom.getData(), (int) ((dataPtr - (8 << 24)) + 0x14), 1)[0];
-                    //mapName -= 0x58; //TODO: Add Jambo51's map header hack
+                    //mapName -= 0x58; // Add Jambo51's map header hack
                     int mapNamePokePtr = 0;
                     String convMapName = "";
                     if (DataStore.EngineVersion == 1) {
                         if (!mapNames.containsKey(mapName)) {
-                            mapNamePokePtr = rom.getPointerAsInt((int) DataStore.MapLabels + ((mapName - 0x58) * 4)); //TODO use the actual structure
+                            mapNamePokePtr = rom.getPointerAsInt((int) DataStore.MapLabels + ((mapName - 0x58) * 4)); //dduse the actual structure
                             convMapName = rom.readPokeText(mapNamePokePtr);
                             mapNames.put(mapName, convMapName);
                         } else {
@@ -94,7 +94,7 @@ public class BankLoader extends Thread implements Runnable {
                         }
                     }
 
-                    DefaultMutableTreeNode node = new DefaultMutableTreeNode(convMapName + " (" + mapNum + "." + miniMapNum + ")"); //TODO: Pull PokeText from header
+                    DefaultMutableTreeNode node = new DefaultMutableTreeNode(convMapName + " (" + mapNum + "." + miniMapNum + ")"); //dd: Pull PokeText from header
                     findNode(root, String.valueOf(mapNum)).add(node);
                     miniMapNum++;
                 } catch (Exception e) {

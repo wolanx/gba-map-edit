@@ -88,7 +88,7 @@ public class EventEditorPanel extends JPanel {
             imgSign = ImageIO.read(MainGUI.class.getResource("/img/sign.png").openStream());
             imgNPC = ImageIO.read(MainGUI.class.getResource("/img/npc.png").openStream());
         } catch (IOException e2) {
-            // TODO Auto-generated catch block
+            // ddAuto-generated catch block
             e2.printStackTrace();
         }
         this.addMouseMotionListener(new MouseMotionListener() {
