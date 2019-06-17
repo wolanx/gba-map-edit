@@ -1,9 +1,7 @@
 package us.plxhack.MEH.MapElements;
 
-public class WildTimeData
-{
-	public WildTimeData()
-	{
-		
-	}
+public class WildTimeData {
+    public WildTimeData() {
+
+    }
 }

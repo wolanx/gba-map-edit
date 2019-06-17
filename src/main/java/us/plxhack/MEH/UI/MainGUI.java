@@ -43,35 +43,35 @@ public class MainGUI extends JFrame {
 
     public static JFrame frmAbout;
 
-    public int paneSize = 0;
+    private int paneSize = 0;
     public int initEditorPanePos = -1;
 
-    public static JLabel lblInfo;
-    public static JLabel lblX;
-    public static JLabel lblY;
+    private static JLabel lblInfo;
+    private static JLabel lblX;
+    private static JLabel lblY;
     public static JTree mapBanks;
 
     private static int eventIndex;
     private static EventType eventType;
-    public static int currentType = 0;
-    public static int selectedTime = 0;
+    private static int currentType = 0;
+    private static int selectedTime = 0;
     private static int popupX;
     private static int popupY;
     int paneSize2;
 
     private JTabbedPane editorTabs;
     private JSplitPane splitPane;
-    public static JLabel lblWidth;
-    public static JLabel lblBorderTilesPointer;
-    public static JLabel lblBorderWidth;
-    public static JLabel lblLocalTilesetPointer;
-    public static JLabel lblMapTilesPointer;
-    public static JLabel lblHeight;
-    public static JLabel lblBorderHeight;
-    public static JLabel lblGlobalTilesetPointer;
-    public static JLabel lblEncounterPercent;
+    private static JLabel lblWidth;
+    private static JLabel lblBorderTilesPointer;
+    private static JLabel lblBorderWidth;
+    private static JLabel lblLocalTilesetPointer;
+    private static JLabel lblMapTilesPointer;
+    private static JLabel lblHeight;
+    private static JLabel lblBorderHeight;
+    private static JLabel lblGlobalTilesetPointer;
+    private static JLabel lblEncounterPercent;
 
-    public static JPanel eventScrollPanel;
+    static JPanel eventScrollPanel;
     private JMenuItem mnOpen;
     private JMenuItem mnSave;
     private JMenuItem mnNewMap;
@@ -398,7 +398,7 @@ public class MainGUI extends JFrame {
         });
 
         mnSave = new JMenuItem("Save");
-        mnSave.enable(false);
+        mnSave.setEnabled(false);
         mnSave.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 MapIO.saveAll();
@@ -423,7 +423,7 @@ public class MainGUI extends JFrame {
                 });
                 fd.setFile(MapIO.currentBank + "-" + MapIO.selectedMap + "-" + BankLoader.mapNames.get((int) MapIO.loadedMap.mapHeader.bLabelID) + ".png");
                 fd.setDirectory(System.getProperty("user.home"));
-                fd.show();
+                fd.setVisible(true);
                 String location = fd.getDirectory() + fd.getFile();
                 if (fd.getDirectory().equals("null"))
                     return;
@@ -487,7 +487,7 @@ public class MainGUI extends JFrame {
         mntmNewMenuItem = new JMenuItem("Triple-Layer Tiles (FR)");
         mntmNewMenuItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                new TripleTilePatcher().show();
+                new TripleTilePatcher().setVisible(true);
             }
         });
         mnPatches.add(mntmNewMenuItem);
@@ -637,7 +637,7 @@ public class MainGUI extends JFrame {
         btnBlockedit.setIcon(new ImageIcon(MainGUI.class.getResource("/img/blockedit.png")));
         btnBlockedit.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                new BlockEditor().show();
+                new BlockEditor().setVisible(true);
             }
         });
         btnBlockedit.setToolTipText("Import Map (Not implemented)");
@@ -1489,7 +1489,7 @@ public class MainGUI extends JFrame {
         lblNewLabel.setMaximumSize(new Dimension(512, 15));
     }
 
-    void CreateMimeTab() {
+    private void CreateMimeTab() {
         mimePanel = new JPanel();
         editorTabs.addTab("Mime", null, mimePanel, null);
         mimePanel.setLayout(new BorderLayout(0, 0));
@@ -1534,7 +1534,7 @@ public class MainGUI extends JFrame {
         mimeEditorPanel.add(lblBorderWidth);
     }
 
-    void CreateTabbedPanels() {
+    private void CreateTabbedPanels() {
         getContentPane().add(splitPane, BorderLayout.CENTER);
 
         editorTabs = new JTabbedPane(SwingConstants.TOP);
@@ -1588,7 +1588,7 @@ public class MainGUI extends JFrame {
         CreateMimeTab();
     }
 
-    void CreateSplitPane() {
+    private void CreateSplitPane() {
         splitPane = new JSplitPane();
         splitPane.setResizeWeight(0.2);
         splitPane.setDividerSize(1);
@@ -1626,7 +1626,7 @@ public class MainGUI extends JFrame {
         splitPane.setDividerLocation(0.2);
     }
 
-    void CreateStatusBar() {
+    private void CreateStatusBar() {
         JPanel statusPanel = new JPanel();
         FlowLayout flowLayout = (FlowLayout) statusPanel.getLayout();
         flowLayout.setAlignment(FlowLayout.LEFT);
@@ -1641,7 +1641,7 @@ public class MainGUI extends JFrame {
         statusPanel.add(lblY);
     }
 
-    public void CreatePermissions() {
+    private void CreatePermissions() {
         JPanel splitm = new JPanel();
         splitm.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
         splitm.setPreferredSize(new Dimension(4, 10));
@@ -1693,7 +1693,7 @@ public class MainGUI extends JFrame {
                     int x = (Integer) spnWidth.getValue();
                     int y = (Integer) spnHeight.getValue();
                     MapIO.loadedMap.getMapTileData().resize(x, y);
-                    mapEditorPanel.Redraw = true;
+                    MapEditorPanel.Redraw = true;
                     eventEditorPanel.Redraw = true;
                     connectionsEditorPanel.loadConnections(MapIO.loadedMap);
                     mapEditorPanel.repaint();
@@ -1717,7 +1717,7 @@ public class MainGUI extends JFrame {
                     int x = (Integer) spnWidth.getValue();
                     int y = (Integer) spnHeight.getValue();
                     MapIO.loadedMap.getMapTileData().resize(x, y);
-                    mapEditorPanel.Redraw = true;
+                    MapEditorPanel.Redraw = true;
                     eventEditorPanel.Redraw = true;
                     connectionsEditorPanel.loadConnections(MapIO.loadedMap);
                     mapEditorPanel.repaint();
@@ -1789,7 +1789,7 @@ public class MainGUI extends JFrame {
         connectionsEditorScroll.addMouseWheelListener(new MouseWheelListener() {
             public void mouseWheelMoved(MouseWheelEvent e) {
                 if (e.isControlDown() || e.isAltDown()) {
-                    connectionsEditorPanel.scale += (double) (e.getWheelRotation() / 5d);
+                    connectionsEditorPanel.scale += e.getWheelRotation() / 5d;
                     if (connectionsEditorPanel.scale < 0.3)
                         connectionsEditorPanel.scale = 0.3;
                     else if (connectionsEditorPanel.scale > 10)
@@ -1821,7 +1821,7 @@ public class MainGUI extends JFrame {
         mapBanks.addTreeSelectionListener(new TreeSelectionListener() {
             public void valueChanged(TreeSelectionEvent e) {
                 try {
-                    String s = ((DefaultMutableTreeNode) e.getPath().getPath()[2]).toString();
+                    String s = e.getPath().getPath()[2].toString();
                     s = s.split("\\(")[s.split("\\(").length - 1].replace(")", "");
                     MapIO.selectedBank = Integer.parseInt(s.split("\\.")[0]);
                     MapIO.selectedMap = Integer.parseInt(s.split("\\.")[1]);
@@ -1906,10 +1906,10 @@ public class MainGUI extends JFrame {
         }
 
         if (MapIO.wildData.aWildPokemon[currentType].bDNEnabled == 1) {
-            pkTime.enable();
+            pkTime.setEnabled(true);
             btnEnableTimebasedPokemon.setVisible(false);
         } else {
-            pkTime.disable();
+            pkTime.setEnabled(false);
             selectedTime = 0;
             btnEnableTimebasedPokemon.setVisible(true);
         }
@@ -1924,31 +1924,31 @@ public class MainGUI extends JFrame {
             pkMax1.setValue((int) MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][0].bMaxLV);
             pkName1.setSelectedIndex(MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][0].wNum);
             pkName1.repaint();
-            pkNo1.setValue((int) MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][0].wNum);
+            pkNo1.setValue(MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][0].wNum);
 
             pkMin2.setValue((int) MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][1].bMinLV);
             pkMax2.setValue((int) MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][1].bMaxLV);
             pkName2.setSelectedIndex(MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][1].wNum);
             pkName2.repaint();
-            pkNo2.setValue((int) MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][1].wNum);
+            pkNo2.setValue(MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][1].wNum);
 
             pkMin3.setValue((int) MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][2].bMinLV);
             pkMax3.setValue((int) MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][2].bMaxLV);
             pkName3.setSelectedIndex(MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][2].wNum);
             pkName3.repaint();
-            pkNo3.setValue((int) MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][2].wNum);
+            pkNo3.setValue(MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][2].wNum);
 
             pkMin4.setValue((int) MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][3].bMinLV);
             pkMax4.setValue((int) MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][3].bMaxLV);
             pkName4.setSelectedIndex(MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][3].wNum);
             pkName4.repaint();
-            pkNo4.setValue((int) MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][3].wNum);
+            pkNo4.setValue(MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][3].wNum);
 
             pkMin5.setValue((int) MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][4].bMinLV);
             pkMax5.setValue((int) MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][4].bMaxLV);
             pkName5.setSelectedIndex(MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][4].wNum);
             pkName5.repaint();
-            pkNo5.setValue((int) MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][4].wNum);
+            pkNo5.setValue(MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][4].wNum);
 
             if (currentType == 0 || currentType == 3) {
                 panelpk6_10.setVisible(true);
@@ -1957,31 +1957,31 @@ public class MainGUI extends JFrame {
                 pkMax6.setValue((int) MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][5].bMaxLV);
                 pkName6.setSelectedIndex(MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][5].wNum);
                 pkName6.repaint();
-                pkNo6.setValue((int) MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][5].wNum);
+                pkNo6.setValue(MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][5].wNum);
 
                 pkMin7.setValue((int) MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][6].bMinLV);
                 pkMax7.setValue((int) MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][6].bMaxLV);
                 pkName7.setSelectedIndex(MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][6].wNum);
                 pkName7.repaint();
-                pkNo7.setValue((int) MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][6].wNum);
+                pkNo7.setValue(MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][6].wNum);
 
                 pkMin8.setValue((int) MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][7].bMinLV);
                 pkMax8.setValue((int) MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][7].bMaxLV);
                 pkName8.setSelectedIndex(MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][7].wNum);
                 pkName8.repaint();
-                pkNo8.setValue((int) MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][7].wNum);
+                pkNo8.setValue(MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][7].wNum);
 
                 pkMin9.setValue((int) MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][8].bMinLV);
                 pkMax9.setValue((int) MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][8].bMaxLV);
                 pkName9.setSelectedIndex(MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][8].wNum);
                 pkName9.repaint();
-                pkNo9.setValue((int) MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][8].wNum);
+                pkNo9.setValue(MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][8].wNum);
 
                 pkMin10.setValue((int) MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][9].bMinLV);
                 pkMax10.setValue((int) MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][9].bMaxLV);
                 pkName10.setSelectedIndex(MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][9].wNum);
                 pkName10.repaint();
-                pkNo10.setValue((int) MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][9].wNum);
+                pkNo10.setValue(MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][9].wNum);
 
                 if (currentType == 0) {
                     panelpk11_12.setVisible(true);
@@ -1990,13 +1990,13 @@ public class MainGUI extends JFrame {
                     pkMax11.setValue((int) MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][10].bMaxLV);
                     pkName11.setSelectedIndex(MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][10].wNum);
                     pkName11.repaint();
-                    pkNo11.setValue((int) MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][10].wNum);
+                    pkNo11.setValue(MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][10].wNum);
 
                     pkMin12.setValue((int) MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][11].bMinLV);
                     pkMax12.setValue((int) MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][11].bMaxLV);
                     pkName12.setSelectedIndex(MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][11].wNum);
                     pkName12.repaint();
-                    pkNo12.setValue((int) MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][11].wNum);
+                    pkNo12.setValue(MapIO.wildData.aWildPokemon[currentType].aWildPokemon[selectedTime][11].wNum);
 
                     pkchance1.setText("20%");
                     pkchance2.setText("20%");
@@ -2039,7 +2039,7 @@ public class MainGUI extends JFrame {
         }
     }
 
-    public void openROM() {
+    private void openROM() {
         int i = GBARom.loadRom();
         String s = Plugin.class.getProtectionDomain().getCodeSource().getLocation().getPath();
         // while(s.contains("/") || s.contains("\\"))
@@ -2047,7 +2047,6 @@ public class MainGUI extends JFrame {
         dataStore = new DataStore("MEH.ini", ROMManager.currentROM.getGameCode());
         MapIO.loadPokemonNames();
 
-        //if (true) {
         mapBanks.setModel(new DefaultTreeModel(new DefaultMutableTreeNode("Maps By Bank...") {
         }));
         DefaultTreeModel model = (DefaultTreeModel) mapBanks.getModel();
@@ -2060,7 +2059,6 @@ public class MainGUI extends JFrame {
         mapEditorPanel.repaint();
         borderTileEditor.repaint();
         tileEditorPanel.repaint();
-        //}
 
         setStatus("Loading...");
 
@@ -2073,7 +2071,7 @@ public class MainGUI extends JFrame {
         PluginManager.fireROMLoad();
     }
 
-    public static void showEventPopUp(int x, int y, EventType event, int index) {
+    static void showEventPopUp(int x, int y, EventType event, int index) {
         popupX = x / 16;
         popupY = y / 16;
         popupMenu.show(eventEditorPanel, x, y);
@@ -2085,7 +2083,7 @@ public class MainGUI extends JFrame {
         lblInfo.setText(s);
     }
 
-    public static void setMouseCoordinates(int x, int y) {
+    static void setMouseCoordinates(int x, int y) {
         lblX.setText("X: " + x);
         lblY.setText("Y: " + y);
     }

@@ -10,78 +10,72 @@ import javax.swing.border.TitledBorder;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class TriggerPanel extends JPanel
-{
+public class TriggerPanel extends JPanel {
 
-	private JTextField txtFlagValue;
-	private JTextField txtScriptAddr;
-	private JTextField txtFlagCheck;
-	int myIndex;
+    private JTextField txtFlagValue;
+    private JTextField txtScriptAddr;
+    private JTextField txtFlagCheck;
+    int myIndex;
 
-	void Load(TriggerManager mgr, int index)
-	{
-		Trigger t = mgr.mapTriggers.get(index);
-		txtScriptAddr.setText(BitConverter.toHexString((int) t.pScript));
-		txtFlagValue.setText(BitConverter.toHexString(t.hFlagValue));
-		txtFlagCheck.setText(BitConverter.toHexString(t.hFlagCheck));
-	}
+    void Load(TriggerManager mgr, int index) {
+        Trigger t = mgr.mapTriggers.get(index);
+        txtScriptAddr.setText(BitConverter.toHexString((int) t.pScript));
+        txtFlagValue.setText(BitConverter.toHexString(t.hFlagValue));
+        txtFlagCheck.setText(BitConverter.toHexString(t.hFlagCheck));
+    }
 
-	public void Save(TriggerManager mgr)
-	{
-		mgr.mapTriggers.get(myIndex).pScript = Integer.parseInt(txtScriptAddr.getText(), 16);
-		mgr.mapTriggers.get(myIndex).hFlagValue = Integer.parseInt(txtFlagValue.getText(), 16);
-		mgr.mapTriggers.get(myIndex).hFlagCheck = Integer.parseInt(txtFlagCheck.getText(), 16);
-	}
+    public void Save(TriggerManager mgr) {
+        mgr.mapTriggers.get(myIndex).pScript = Integer.parseInt(txtScriptAddr.getText(), 16);
+        mgr.mapTriggers.get(myIndex).hFlagValue = Integer.parseInt(txtFlagValue.getText(), 16);
+        mgr.mapTriggers.get(myIndex).hFlagCheck = Integer.parseInt(txtFlagCheck.getText(), 16);
+    }
 
-	/**
-	 * Create the panel.
-	 */
-	public TriggerPanel(TriggerManager mgr, int index)
-	{
-		myIndex = index;
-		setBorder(new TitledBorder(null, "Triggers", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+    /**
+     * Create the panel.
+     */
+    public TriggerPanel(TriggerManager mgr, int index) {
+        myIndex = index;
+        setBorder(new TitledBorder(null, "Triggers", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 
-		JLabel lblScriptAddr = new JLabel("Script Addr:");
-		add(lblScriptAddr);
+        JLabel lblScriptAddr = new JLabel("Script Addr:");
+        add(lblScriptAddr);
 
-		txtScriptAddr = new JTextField();
-		txtScriptAddr.setColumns(10);
-		add(txtScriptAddr);
+        txtScriptAddr = new JTextField();
+        txtScriptAddr.setColumns(10);
+        add(txtScriptAddr);
 
-		JLabel lblFlagcheck = new JLabel("FlagCheck:");
-		add(lblFlagcheck);
+        JLabel lblFlagcheck = new JLabel("FlagCheck:");
+        add(lblFlagcheck);
 
-		txtFlagCheck = new JTextField();
-		txtFlagCheck.setColumns(10);
-		add(txtFlagCheck);
+        txtFlagCheck = new JTextField();
+        txtFlagCheck.setColumns(10);
+        add(txtFlagCheck);
 
-		JLabel lblNewLabel = new JLabel("Flag Value:");
-		add(lblNewLabel);
+        JLabel lblNewLabel = new JLabel("Flag Value:");
+        add(lblNewLabel);
 
-		txtFlagValue = new JTextField();
-		add(txtFlagValue);
-		txtFlagValue.setColumns(10);
+        txtFlagValue = new JTextField();
+        add(txtFlagValue);
+        txtFlagValue.setColumns(10);
 
-		JButton btnSave = new JButton("Save");
-		btnSave.addActionListener(new ActionListener()
-		{
+        JButton btnSave = new JButton("Save");
+        btnSave.addActionListener(new ActionListener() {
 
-			public void actionPerformed(ActionEvent e)
-			{
-				Save(MapIO.loadedMap.mapTriggerManager);
-			}
-		});
-		add(btnSave);
+            public void actionPerformed(ActionEvent e) {
+                Save(MapIO.loadedMap.mapTriggerManager);
+            }
+        });
+        add(btnSave);
 
-		JPanel panel = new JPanel();
-		panel.setBorder(new TitledBorder(null, "Flag Operations", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		add(panel);
-		panel.setLayout(null);
+        JPanel panel = new JPanel();
+        panel.setBorder(new TitledBorder(null, "Flag Operations", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+        add(panel);
+        panel.setLayout(null);
 
-		JButton button = new JButton("New button");
-		add(button);
+        JButton button = new JButton("New button");
+        add(button);
 
-		Load(mgr, index);
-	}
+        Load(mgr, index);
+    }
 
 }
