@@ -183,20 +183,20 @@ public class PermissionTilePanel extends JPanel
 	
 	public void setPermissionMode(PermissionTileMode permMode)
 	{
-		String imagePath = "/resources/permissions.png";
+		String imagePath = "/img/permissions.png";
 		switch(permMode)
 		{
 			case LEGACY:
 				editorWidth = 1;
-				imagePath = "/resources/permissionslinear.png";
+				imagePath = "/img/permissionslinear.png";
 				break;
 			case LEGACY_HYBRID:
 				editorWidth = 4;
-				imagePath = "/resources/permissionslinear.png";
+				imagePath = "/img/permissionslinear.png";
 				break;
 			case A_MAP:
 				editorWidth = 1;
-				imagePath = "/resources/permissionsamap.png"; //TODO Get Bela to do this one!
+				imagePath = "/img/permissionsamap.png"; //TODO Get Bela to do this one!
 			default:
 				editorWidth = 4;
 		}
@@ -241,7 +241,7 @@ public class PermissionTilePanel extends JPanel
 		{
 			// best error image.
 			// I'll always remember you Smeargle <3
-			// g.drawImage(ImageIO.read(MainGUI.class.getResourceAsStream("/resources/smeargle.png")),
+			// g.drawImage(ImageIO.read(MainGUI.class.getResourceAsStream("/img/smeargle.png")),
 			// 100, 240,null);
 		}
 		catch (Exception e)

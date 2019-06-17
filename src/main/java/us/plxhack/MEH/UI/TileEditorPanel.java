@@ -222,7 +222,7 @@ public class TileEditorPanel extends JPanel {
 		try {
 			//best error image.
 			//I'll always remember you Smeargle <3
-			//g.drawImage(ImageIO.read(MainGUI.class.getResourceAsStream("/resources/smeargle.png")), 100, 240,null);
+			//g.drawImage(ImageIO.read(MainGUI.class.getResourceAsStream("/img/smeargle.png")), 100, 240,null);
 		}
 		catch (Exception e) {
 			e.printStackTrace();

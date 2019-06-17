@@ -275,7 +275,7 @@ public class TilesetPickerPanel extends JPanel
 		{
 			// best error image.
 			// I'll always remember you Smeargle <3
-			// g.drawImage(ImageIO.read(MainGUI.class.getResourceAsStream("/resources/smeargle.png")),
+			// g.drawImage(ImageIO.read(MainGUI.class.getResourceAsStream("/img/smeargle.png")),
 			// 100, 240,null);
 		}
 		catch (Exception e)

@@ -12,10 +12,10 @@ public class MapTreeRenderer extends DefaultTreeCellRenderer {
 
 	public MapTreeRenderer() {
 		mainIcon = new ImageIcon(
-				MainGUI.class.getResource("/resources/folder.png"));
+				MainGUI.class.getResource("/img/folder.png"));
 		mainIcon_expanded = new ImageIcon(
-				MainGUI.class.getResource("/resources/folder_open.png"));
-		mapIcon = new ImageIcon(MainGUI.class.getResource("/resources/map.png"));
+				MainGUI.class.getResource("/img/folder_open.png"));
+		mapIcon = new ImageIcon(MainGUI.class.getResource("/img/map.png"));
 	}
 
 	@Override

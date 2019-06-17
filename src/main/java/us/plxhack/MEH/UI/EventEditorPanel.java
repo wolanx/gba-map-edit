@@ -89,10 +89,10 @@ public class EventEditorPanel extends JPanel
 		selectedEvent = null;
 
 		try {
-			imgTrigger = ImageIO.read(MainGUI.class.getResource("/resources/trigger.png").openStream());
-			imgWarp = ImageIO.read(MainGUI.class.getResource("/resources/warp.png").openStream());
-			imgSign = ImageIO.read(MainGUI.class.getResource("/resources/sign.png").openStream());
-			imgNPC = ImageIO.read(MainGUI.class.getResource("/resources/npc.png").openStream());
+			imgTrigger = ImageIO.read(MainGUI.class.getResource("/img/trigger.png").openStream());
+			imgWarp = ImageIO.read(MainGUI.class.getResource("/img/warp.png").openStream());
+			imgSign = ImageIO.read(MainGUI.class.getResource("/img/sign.png").openStream());
+			imgNPC = ImageIO.read(MainGUI.class.getResource("/img/npc.png").openStream());
 		}
 		catch (IOException e2) {
 			// TODO Auto-generated catch block
@@ -348,7 +348,7 @@ public class EventEditorPanel extends JPanel
 		}
 		try
 		{
-			// g.drawImage(ImageIO.read(MainGUI.class.getResourceAsStream("/resources/smeargle.png")),
+			// g.drawImage(ImageIO.read(MainGUI.class.getResourceAsStream("/img/smeargle.png")),
 			// 100, 240, null);
 		}
 		catch (Exception e)

@@ -249,7 +249,7 @@ public class BorderEditorPanel extends JPanel
 		}
 		try
 		{
-			//g.drawImage(ImageIO.read(MainGUI.class.getResourceAsStream("/resources/smeargle.png")), 100, 240, null);
+			//g.drawImage(ImageIO.read(MainGUI.class.getResourceAsStream("/img/smeargle.png")), 100, 240, null);
 		}
 		catch (Exception e)
 		{

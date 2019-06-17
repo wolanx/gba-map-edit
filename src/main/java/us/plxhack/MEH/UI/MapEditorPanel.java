@@ -389,7 +389,7 @@ public class MapEditorPanel extends JPanel {
             }
 		}
 		try {
-			// g.drawImage(ImageIO.read(MapIO.class.getResourceAsStream("/resources/smeargle.png")),
+			// g.drawImage(ImageIO.read(MapIO.class.getResourceAsStream("/img/smeargle.png")),
 			// 100, 240, null);
 		}
 		catch (Exception e) {
