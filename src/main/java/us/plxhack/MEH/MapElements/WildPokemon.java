@@ -4,6 +4,7 @@ import org.zzl.minegaming.GBAUtils.GBARom;
 import org.zzl.minegaming.GBAUtils.ISaveable;
 
 public class WildPokemon implements ISaveable {
+
     private GBARom rom;
     public byte bMinLV, bMaxLV;
     public int wNum;
@@ -31,4 +32,5 @@ public class WildPokemon implements ISaveable {
         rom.writeByte(bMaxLV);
         rom.writeWord(wNum);
     }
+
 }

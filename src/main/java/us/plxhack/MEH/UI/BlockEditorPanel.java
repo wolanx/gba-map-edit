@@ -206,4 +206,5 @@ public class BlockEditorPanel extends JPanel {
         localTiles = null;
         block = null;
     }
+
 }

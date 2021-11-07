@@ -9,6 +9,7 @@ import us.plxhack.MEH.IO.Map;
 import java.util.ArrayList;
 
 public class SpritesExitManager implements ISaveable {
+
     public ArrayList<SpriteExit> mapExits;
     private Map loadedMap;
     private int internalOffset = 0;
@@ -73,4 +74,5 @@ public class SpritesExitManager implements ISaveable {
         for (SpriteExit e : mapExits)
             e.save();
     }
+
 }

@@ -4,6 +4,7 @@ import org.zzl.minegaming.GBAUtils.GBARom;
 import org.zzl.minegaming.GBAUtils.ISaveable;
 
 public class Trigger implements ISaveable {
+
     public byte bX;
     public byte b2;
     public byte bY;
@@ -68,4 +69,5 @@ public class Trigger implements ISaveable {
         rom.writeWord(h6);
         rom.writePointer(pScript + (pScript == 0 ? 0 : 0x08000000));
     }
+
 }

@@ -14,6 +14,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class ConnectionAddGUI extends JFrame {
+
     PanelMapPreview panelMap;
     final JSpinner spinnerBank;
     public boolean hasResult;
@@ -85,4 +86,5 @@ public class ConnectionAddGUI extends JFrame {
         panelMap.setMap(bank, map);
         panelMap.repaint();
     }
+
 }

@@ -4,6 +4,7 @@ import org.zzl.minegaming.GBAUtils.GBARom;
 import org.zzl.minegaming.GBAUtils.ISaveable;
 
 public class MapHeader implements ISaveable {
+
     public long pMap;
     public long pSprites;
     public long pScript;
@@ -64,4 +65,5 @@ public class MapHeader implements ISaveable {
         rom.writeByte(bLabelToggle);
         rom.writeByte(bUnused3);
     }
+
 }

@@ -10,6 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class ExitPanel extends JPanel {
+
     int myIndex;
     JSpinner spinner;
     JSpinner spinner_1;

@@ -5,6 +5,7 @@ import org.zzl.minegaming.GBAUtils.GBARom;
 import org.zzl.minegaming.GBAUtils.ISaveable;
 
 public class BorderMap implements ISaveable {
+
     private Map map;
     private MapData mapData;
     private BorderTileData mapTileData;
@@ -27,4 +28,5 @@ public class BorderMap implements ISaveable {
     public void save() {
         mapTileData.save();
     }
+
 }

@@ -6,6 +6,7 @@ import org.zzl.minegaming.GBAUtils.GBARom;
 import java.util.HashMap;
 
 public class WildDataCache extends Thread implements Runnable {
+
     private static HashMap<Integer, WildData> dataCache = new HashMap<Integer, WildData>();
     private static GBARom rom;
     private static int initialNum;
@@ -72,4 +73,5 @@ public class WildDataCache extends Thread implements Runnable {
     public void run() {
         gatherData();
     }
+
 }

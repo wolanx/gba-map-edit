@@ -3,6 +3,7 @@ package us.plxhack.MEH.MapElements;
 import org.zzl.minegaming.GBAUtils.GBARom;
 
 public class HeaderSprites {
+
     public byte bNumNPC;
     public byte bNumExits;
     public byte bNumTraps;
@@ -46,4 +47,5 @@ public class HeaderSprites {
         rom.writePointer((int) pTraps);
         rom.writePointer((int) pSigns);
     }
+
 }

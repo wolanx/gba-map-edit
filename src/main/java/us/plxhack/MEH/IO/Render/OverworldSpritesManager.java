@@ -6,6 +6,7 @@ import org.zzl.minegaming.GBAUtils.GBARom;
 import java.awt.*;
 
 public class OverworldSpritesManager extends Thread implements Runnable {
+
     public static OverworldSprites[] Sprites = new OverworldSprites[256];
     private static GBARom rom;
 
@@ -41,4 +42,5 @@ public class OverworldSpritesManager extends Thread implements Runnable {
             loadSprite(i);
         }
     }
+
 }

@@ -5,6 +5,7 @@ import org.zzl.minegaming.GBAUtils.GBARom;
 import org.zzl.minegaming.GBAUtils.ISaveable;
 
 public class WildPokemonData implements ISaveable, Cloneable {
+
     private WildDataType type;
     private GBARom rom;
     private long pData;
@@ -175,4 +176,5 @@ public class WildPokemonData implements ISaveable, Cloneable {
     public Object clone() throws CloneNotSupportedException {
         return new WildPokemonData(this);
     }
+
 }

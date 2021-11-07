@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class PluginManager {
+
     private static ArrayList<Plugin> plugins = new ArrayList<Plugin>();
 
     public static void loadAllPlugins() throws Exception {
@@ -71,4 +72,5 @@ public class PluginManager {
         for (Plugin p : plugins)
             p.saveMap(bank, map);
     }
+
 }

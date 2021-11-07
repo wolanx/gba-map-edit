@@ -7,6 +7,7 @@ import java.awt.image.BufferedImage;
 
 
 public class OverworldSprites {
+
     //Rom structure
 	/*
 	public long lIndex; //Primary Key in sprite database?

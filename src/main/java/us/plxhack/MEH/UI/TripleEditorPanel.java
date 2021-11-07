@@ -124,4 +124,5 @@ public class TripleEditorPanel extends JPanel {
         localTiles = null;
         block = null;
     }
+
 }

@@ -22,6 +22,7 @@ import java.awt.event.MouseMotionListener;
 import java.io.IOException;
 
 public class EventEditorPanel extends JPanel {
+
     private static final long serialVersionUID = -877213633894324075L;
     private Tileset globalTiles;
     private Tileset localTiles;
@@ -334,4 +335,5 @@ public class EventEditorPanel extends JPanel {
         localTiles = null;
         map = null;
     }
+
 }

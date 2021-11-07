@@ -4,6 +4,7 @@ import org.zzl.minegaming.GBAUtils.GBARom;
 import org.zzl.minegaming.GBAUtils.ISaveable;
 
 public class SpriteSign implements ISaveable {
+
     //ddI'm pretty sure some of these are word values...
     public byte bX;
     public byte b2;
@@ -64,4 +65,5 @@ public class SpriteSign implements ISaveable {
         rom.writeByte(b8);
         rom.writePointer(pScript + (pScript == 0 ? 0 : 0x08000000));
     }
+
 }

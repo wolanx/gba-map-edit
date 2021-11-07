@@ -4,6 +4,7 @@ import org.zzl.minegaming.GBAUtils.GBARom;
 import us.plxhack.MEH.Structures.ConnectionType;
 
 public class Connection {
+
     private GBARom rom;
     public long lType, lOffset;
     public byte bBank, bMap;
@@ -38,4 +39,5 @@ public class Connection {
         rom.writeByte(bMap);
         rom.writeWord(wFiller);
     }
+
 }

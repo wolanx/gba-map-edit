@@ -4,6 +4,7 @@ import org.zzl.minegaming.GBAUtils.GBARom;
 import org.zzl.minegaming.GBAUtils.ISaveable;
 
 public class SpriteExit implements ISaveable {
+
     public byte bX;
     public byte b2;
     public byte bY;
@@ -59,4 +60,5 @@ public class SpriteExit implements ISaveable {
         rom.writeByte(bMap);
         rom.writeByte(bBank);
     }
+
 }

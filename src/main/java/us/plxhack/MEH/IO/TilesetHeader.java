@@ -4,6 +4,7 @@ import org.zzl.minegaming.GBAUtils.GBARom;
 import org.zzl.minegaming.GBAUtils.ISaveable;
 
 public class TilesetHeader implements ISaveable {
+
     public byte bCompressed;
     public boolean isPrimary;
     public byte b2;
@@ -49,4 +50,5 @@ public class TilesetHeader implements ISaveable {
         rom.writePointer((int) pAnimation);
         rom.writePointer((int) pBehavior);
     }
+
 }

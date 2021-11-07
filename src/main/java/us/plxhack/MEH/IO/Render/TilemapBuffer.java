@@ -9,6 +9,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 
 public class TilemapBuffer {
+
     public GBAImageType myType;
     public Graphics gcBuff;
     public Image imgBuffer;

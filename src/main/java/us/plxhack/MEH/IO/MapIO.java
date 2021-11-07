@@ -17,6 +17,7 @@ import java.io.IOException;
 import java.util.Date;
 
 public class MapIO {
+
     public static Map loadedMap;
 
     public static BorderMap borderMap;
@@ -202,4 +203,5 @@ public class MapIO {
         saveMap();
         saveROM();
     }
+
 }

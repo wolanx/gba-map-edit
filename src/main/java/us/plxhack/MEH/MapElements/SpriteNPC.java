@@ -4,6 +4,7 @@ import org.zzl.minegaming.GBAUtils.GBARom;
 import org.zzl.minegaming.GBAUtils.ISaveable;
 
 public class SpriteNPC implements ISaveable {
+
     public byte b1;
     public int bSpriteSet;
     public byte b4;
@@ -103,4 +104,5 @@ public class SpriteNPC implements ISaveable {
         rom.writeByte(b23);
         rom.writeByte(b24);
     }
+
 }

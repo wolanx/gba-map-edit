@@ -1,6 +1,7 @@
 package us.plxhack.MEH.IO;
 
 public class Tile {
+
     private int tileNum;
     private int pal;
     public boolean xFlip;
@@ -44,4 +45,5 @@ public class Tile {
     public Tile getNewInstance() {
         return new Tile(tileNum, pal, xFlip, yFlip);
     }
+
 }

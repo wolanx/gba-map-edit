@@ -10,6 +10,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 
 public class BlockRenderer extends Component {
+
     public enum TripleType {
         NONE,
         LEGACY,
@@ -72,8 +73,9 @@ public class BlockRenderer extends Component {
         else if ((getBehaviorByte(origBlockNum) >> (DataStore.EngineVersion == 1 ? 24 : 8) & 0x60) == 0x60 && DataStore.EngineVersion == 1)
             type = TripleType.REFERENCE;
 
-        if (type != TripleType.NONE)
-            System.out.println("Rendering triple tile! " + type.toString());
+        // type
+        if (type == TripleType.NONE)
+            System.out.println("Rendering triple tile! " + type);
 
         for (int i = 0; i < (type != TripleType.NONE ? 24 : 16); i++) {
             if (type == TripleType.REFERENCE && i == 16) {
@@ -180,4 +182,5 @@ public class BlockRenderer extends Component {
         long bytes = DataStore.EngineVersion == 1 ? global.getROM().getPointer(true) : global.getROM().getPointer(true) & 0xFFFF;
         return bytes;
     }
+
 }

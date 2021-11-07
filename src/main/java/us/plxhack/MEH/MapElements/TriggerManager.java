@@ -9,6 +9,7 @@ import us.plxhack.MEH.IO.Map;
 import java.util.ArrayList;
 
 public class TriggerManager implements ISaveable {
+
     public ArrayList<Trigger> mapTriggers;
     private Map loadedMap;
     private int internalOffset = 0;
@@ -79,4 +80,5 @@ public class TriggerManager implements ISaveable {
         for (Trigger t : mapTriggers)
             t.save();
     }
+
 }

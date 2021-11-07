@@ -178,4 +178,5 @@ public class NPCPane extends JPanel {
         btnSave.setBounds(55, 163, 89, 23);
         Load(mgr, NPCIndex);
     }
+
 }

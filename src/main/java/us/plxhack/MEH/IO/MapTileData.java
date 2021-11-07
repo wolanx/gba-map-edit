@@ -7,6 +7,7 @@ import org.zzl.minegaming.GBAUtils.ISaveable;
 import us.plxhack.MEH.Structures.MapTile;
 
 public class MapTileData implements ISaveable {
+
     private int originalPointer;
     private int originalSize;
     private MapData mData;
@@ -95,4 +96,5 @@ public class MapTileData implements ISaveable {
 
         mapTiles = newMapTiles;
     }
+
 }

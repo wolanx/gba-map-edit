@@ -7,6 +7,7 @@ import java.awt.image.BufferedImage;
 import java.util.HashMap;
 
 public class Tileset {
+
     private GBARom rom;
     private GBAImage image;
     private BufferedImage[] bi;
@@ -231,6 +232,7 @@ public class Tileset {
     }
 
     private class TileLoader extends Thread implements Runnable {
+
         HashMap<Integer, BufferedImage>[] buffer;
         int pal;
 
@@ -261,4 +263,5 @@ public class Tileset {
         }
         tilesetHeader.save();
     }
+
 }

@@ -222,4 +222,5 @@ public class BorderEditorPanel extends JPanel {
         localTiles = null;
         map = null;
     }
+
 }

@@ -13,6 +13,7 @@ import java.awt.event.MouseMotionListener;
 import java.awt.image.BufferedImage;
 
 public class TilesetPickerPanel extends JPanel {
+
     private static final long serialVersionUID = -877213633894324075L;
     public int baseSelectedTile;    // Called it base in case of multiple tile
     public int baseSelectedPal;

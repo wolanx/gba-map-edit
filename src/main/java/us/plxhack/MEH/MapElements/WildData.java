@@ -4,6 +4,7 @@ import org.zzl.minegaming.GBAUtils.DataStore;
 import org.zzl.minegaming.GBAUtils.GBARom;
 
 public class WildData implements Cloneable {
+
     public WildPokemonData[] aWildPokemon = new WildPokemonData[4];
     public WildDataHeader wildDataHeader;
     private GBARom rom;
@@ -165,4 +166,5 @@ public class WildData implements Cloneable {
     public Object clone() throws CloneNotSupportedException {
         return new WildData(this);
     }
+
 }

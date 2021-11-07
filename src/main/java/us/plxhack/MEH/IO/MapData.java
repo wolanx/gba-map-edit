@@ -6,6 +6,7 @@ import org.zzl.minegaming.GBAUtils.GBARom;
 import org.zzl.minegaming.GBAUtils.ISaveable;
 
 public class MapData implements ISaveable {
+
     private GBARom rom;
     private MapHeader mapHeader;
     public long mapWidth, mapHeight;
@@ -51,4 +52,5 @@ public class MapData implements ISaveable {
         rom.writePointer(localTileSetPtr);
         //rom.writeBytes(((int)mapHeader.pMap), new byte[]{(byte)(borderWidth), (byte)(borderHeight)}); //Isn't quite working yet :/
     }
+
 }

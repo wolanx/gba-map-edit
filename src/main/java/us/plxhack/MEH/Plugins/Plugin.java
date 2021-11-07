@@ -6,6 +6,7 @@ import org.zzl.minegaming.GBAUtils.GBARom;
 import javax.swing.*;
 
 public class Plugin {
+
     private ImageIcon buttonImage;
     private String toolTip;
     protected GBARom rom;

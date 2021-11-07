@@ -9,6 +9,7 @@ import us.plxhack.MEH.IO.Map;
 import java.util.ArrayList;
 
 public class SpritesSignManager implements ISaveable {
+
     public ArrayList<SpriteSign> mapSigns;
     private int internalOffset;
     private int originalSize;
@@ -71,4 +72,5 @@ public class SpritesSignManager implements ISaveable {
         for (SpriteSign s : mapSigns)
             s.save();
     }
+
 }

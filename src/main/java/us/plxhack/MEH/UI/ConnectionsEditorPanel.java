@@ -15,6 +15,7 @@ import java.awt.event.MouseMotionAdapter;
 import java.awt.image.BufferedImage;
 
 public class ConnectionsEditorPanel extends JPanel {
+
     private static final long serialVersionUID = 7594967420892677608L;
 
     //Map data
@@ -615,4 +616,5 @@ public class ConnectionsEditorPanel extends JPanel {
     public int getLargestWidth() {
         return 0;
     }
+
 }

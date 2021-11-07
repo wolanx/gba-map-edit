@@ -22,6 +22,7 @@ import java.io.FilenameFilter;
 import java.io.IOException;
 
 public class BlockEditor extends JFrame {
+
     TilesetPickerPanel tpp;
     JComboBox comboBox;
     JScrollPane scrollPaneTep;
@@ -572,5 +573,7 @@ public class BlockEditor extends JFrame {
             for (AbstractButton b : this.buttons)
                 b.setSelected(false);
         }
+
     }
+
 }

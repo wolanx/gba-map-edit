@@ -9,6 +9,7 @@ import us.plxhack.MEH.IO.Map;
 import java.util.ArrayList;
 
 public class SpritesNPCManager implements ISaveable {
+
     public ArrayList<SpriteNPC> mapNPCs;
     private int internalOffset;
     private GBARom rom;
@@ -81,4 +82,5 @@ public class SpritesNPCManager implements ISaveable {
         for (SpriteNPC n : mapNPCs)
             n.save();
     }
+
 }

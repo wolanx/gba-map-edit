@@ -5,6 +5,7 @@ import org.zzl.minegaming.GBAUtils.GBARom;
 
 
 public class Block {
+
     public Tile[][] tilesForeground;
     public Tile[][] tilesBackground;
     public int blockID;

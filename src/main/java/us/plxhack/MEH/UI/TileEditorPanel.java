@@ -16,6 +16,7 @@ import java.awt.image.BufferedImage;
 
 //ddMake this a base class for *any* tileset, ie movement perms
 public class TileEditorPanel extends JPanel {
+
     private static final long serialVersionUID = -877213633894324075L;
     public int baseSelectedTile;    // Called it base in case of multiple tile
     // selection in the future.
@@ -253,4 +254,5 @@ public class TileEditorPanel extends JPanel {
             //BlockEditor.lblMeep.setText(String.format("0x%3s", Integer.toHexString(baseSelectedTile)).replace(' ', '0'));
         }
     }
+
 }

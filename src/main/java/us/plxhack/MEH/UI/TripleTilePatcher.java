@@ -8,6 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class TripleTilePatcher extends JFrame {
+
     final JLabel lblError;
     final JButton btnPatch;
     final JButton btnCancel;
@@ -127,4 +128,5 @@ public class TripleTilePatcher extends JFrame {
 
         return true;
     }
+
 }

@@ -16,6 +16,7 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 
 public class PermissionTilePanel extends JPanel {
+
     private static final long serialVersionUID = -877213633894324075L;
     public static int baseSelectedTile;    // Called it base in case of multiple tile
     // selection in the future.
@@ -97,7 +98,7 @@ public class PermissionTilePanel extends JPanel {
                     MapEditorPanel.selectBox.height = 16;
                     String k = "Current Tile: ";
                     k += String.format("0x%8s",
-                            Integer.toHexString(baseSelectedTile))
+                                    Integer.toHexString(baseSelectedTile))
                             .replace(' ', '0');
                     MainGUI.lblTileVal.setText("Current Perm: 0x" + BitConverter.toHexString(PermissionTilePanel.baseSelectedTile));
                     repaint();

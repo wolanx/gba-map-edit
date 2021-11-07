@@ -15,6 +15,7 @@ import java.util.Enumeration;
 import java.util.HashMap;
 
 public class BankLoader extends Thread implements Runnable {
+
     private static GBARom rom;
     int tblOffs;
     JLabel lbl;
@@ -152,4 +153,5 @@ public class BankLoader extends Thread implements Runnable {
         }
         return null;
     }
+
 }

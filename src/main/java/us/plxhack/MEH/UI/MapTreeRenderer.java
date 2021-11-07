@@ -5,6 +5,7 @@ import javax.swing.tree.DefaultTreeCellRenderer;
 import java.awt.*;
 
 public class MapTreeRenderer extends DefaultTreeCellRenderer {
+
     private static final long serialVersionUID = 4125843897499413188L;
     ImageIcon mainIcon;
     ImageIcon mainIcon_expanded;
@@ -40,4 +41,5 @@ public class MapTreeRenderer extends DefaultTreeCellRenderer {
 
         return this;
     }
+
 }

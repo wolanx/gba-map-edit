@@ -1,6 +1,7 @@
 package us.plxhack.MEH.Structures;
 
 public class MapID {
+
     private int bank, map;
 
     public MapID(int bank, int map) {
@@ -29,4 +30,5 @@ public class MapID {
 
         return false;
     }
+
 }

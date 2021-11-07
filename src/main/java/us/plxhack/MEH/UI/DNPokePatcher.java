@@ -10,6 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class DNPokePatcher extends JFrame {
+
     private JTextField txtFreespace;
     private JTextField txtStatusByte;
     final JLabel lblError;
@@ -268,4 +269,5 @@ public class DNPokePatcher extends JFrame {
 
         return true;
     }
+
 }

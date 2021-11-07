@@ -24,4 +24,5 @@ public class HexDocument extends PlainDocument {
         }
 
     }
+
 }

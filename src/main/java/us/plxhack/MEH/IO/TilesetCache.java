@@ -7,6 +7,7 @@ import org.zzl.minegaming.GBAUtils.ROMManager;
 import java.util.HashMap;
 
 public class TilesetCache {
+
     private static HashMap<Integer, Tileset> cache = new HashMap<Integer, Tileset>();
     private GBARom rom;
 
@@ -59,4 +60,5 @@ public class TilesetCache {
         get(loadedMap.getMapData().localTileSetPtr).startTileThreads();
         get(loadedMap.getMapData().globalTileSetPtr).startTileThreads();
     }
+
 }

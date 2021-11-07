@@ -17,6 +17,7 @@ import java.awt.event.MouseMotionListener;
 import java.awt.image.BufferedImage;
 
 public class MapEditorPanel extends JPanel {
+
     private static MapEditorPanel instance = null;
 
     public static MapEditorPanel getInstance() {
@@ -386,4 +387,5 @@ public class MapEditorPanel extends JPanel {
     public static EditMode getMode() {
         return currentMode;
     }
+
 }

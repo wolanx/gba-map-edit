@@ -9,6 +9,7 @@ import us.plxhack.MEH.UI.MainGUI;
 import java.util.ArrayList;
 
 public class ConnectionData {
+
     private int originalSize;
     private GBARom rom;
     private MapHeader mapHeader;
@@ -70,4 +71,5 @@ public class ConnectionData {
 
         MainGUI.connectionsEditorPanel.loadConnections(MapIO.loadedMap);
     }
+
 }

@@ -4,6 +4,7 @@ import org.zzl.minegaming.GBAUtils.GBARom;
 import us.plxhack.MEH.Structures.MapTile;
 
 public class BorderTileData {
+
     private int originalPointer;
     private int originalSize;
     private int dataLoc;
@@ -90,4 +91,5 @@ public class BorderTileData {
 		
 		mapTiles = newMapTiles;*/
     }
+
 }

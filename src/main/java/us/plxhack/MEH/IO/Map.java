@@ -15,6 +15,7 @@ import java.awt.image.BufferedImage;
 
 
 public class Map implements ISaveable {
+
     private MapData mapData;
     private MapTileData mapTileData;
     public MapHeader mapHeader;
@@ -115,4 +116,5 @@ public class Map implements ISaveable {
 
         return imgBuffer;
     }
+
 }
