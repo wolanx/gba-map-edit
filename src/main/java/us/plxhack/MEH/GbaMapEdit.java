@@ -6,7 +6,8 @@ import us.plxhack.MEH.UI.MainGUI;
 
 import javax.swing.*;
 
-public class Main {
+public class GbaMapEdit {
+
     public static void main(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException {
         UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         // Override for window managers such as bspwm and i3 where they may not
@@ -32,4 +33,5 @@ public class Main {
             e.printStackTrace();
         }
     }
+
 }

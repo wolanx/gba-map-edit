@@ -1,15 +1,17 @@
-apply plugin: 'java'
+plugins {
+    id 'java'
+}
 
 group = 'com.zx5435.gba'
-version = '1.0'
+version = '1.0.0'
 sourceCompatibility = '1.8'
 
 repositories {
     mavenLocal()
-    maven { url "http://maven.aliyun.com/nexus/content/groups/public" }
+    maven { url "https://maven.aliyun.com/nexus/content/groups/public" }
     mavenCentral()
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', includes: ['*.jar']) // 重点
+    implementation fileTree(dir: 'libs', includes: ['*.jar']) // 重点
 }

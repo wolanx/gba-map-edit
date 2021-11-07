@@ -39,6 +39,7 @@ import java.io.FilenameFilter;
 import java.io.IOException;
 
 public class MainGUI extends JFrame {
+
     public static UISettings uiSettings;
 
     public static JFrame frmAbout;
@@ -2087,11 +2088,14 @@ public class MainGUI extends JFrame {
     }
 
     private static class __Tmp {
+
         private static void __tmp() {
             javax.swing.JPanel __wbp_panel = new javax.swing.JPanel();
 
             javax.swing.JMenuItem menuItem = new javax.swing.JMenuItem("New menu item");
             __wbp_panel.add(menuItem);
         }
+
     }
+
 }

@@ -10,6 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class SignPanel extends JPanel {
+
     private JTextField textField;
     int myIndex;
 
@@ -30,7 +31,7 @@ public class SignPanel extends JPanel {
         setLayout(null);
 
         JLabel lblScriptPointer = new JLabel("<html>Script Pointer:   <B style=\"color: green\">$</B><html>");
-        lblScriptPointer.setBounds(12, 27, 127, 15);
+        lblScriptPointer.setBounds(12, 27, 127, 27);
         add(lblScriptPointer);
 
         textField = new JTextField();
@@ -59,4 +60,5 @@ public class SignPanel extends JPanel {
         Load(mgr, index);
 
     }
+
 }
